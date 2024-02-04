@@ -1,0 +1,15 @@
+@if(node) {
+<div class="node">
+    {{ node.data }}
+    @if(node.leftBranch) {
+    <div>
+        <app-tree [node]="node.leftBranch"></app-tree>
+    </div>
+    }
+    @if(node.rightBranch) {
+    <div>
+        <app-tree [node]="node.rightBranch"></app-tree>
+    </div>
+    }
+</div>
+}

@@ -1,0 +1,11 @@
+<div class="m-2 text-xl font-medium text-teal-900">Palindrome check</div>
+
+<input [(ngModel)]="word" (ngModelChange)="checkPalindrome()" class=" m-2 outline-none p-1 rounded"/>
+
+@if (!word) {
+    <div class="text-sky-600 m-2">Please enter a word to check if the word is palindrome or not.</div>
+} @else if (isPalindrome) {
+    <div class="text-teal-600 m-2">{{word}} is a Palindrome</div>
+} @else {
+    <div class="text-amber-700 m-2">{{word}} is NOT a Palindrome</div>
+}

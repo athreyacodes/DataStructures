@@ -1,0 +1,23 @@
+<div class="m-2 text-xl font-medium text-teal-600">Binary Tree</div>
+
+<p class="text-teal-600 m-2 p-2">Root and Leaf</p>
+<p class="text-teal-600 m-2 p-2">Only 2 children per node. left right.</p>
+<p class="text-teal-600 m-2 p-2">left node is smaller than parent node. right node is bigger than parent node.</p>
+
+<input [(ngModel)]="item" type="number" class="m-2 outline-none p-1 rounded"/>
+
+<button class="bg-teal-600 text-slate-50 m-2 p-2 rounded" (click)="addItemToTree()">Add to Binary tree</button>
+
+<div class="text-sky-600 m-2" [innerText]="result"></div>
+
+@if(binaryTree.root) {
+    <div class="w-100">
+        <app-tree [node]="binaryTree.root"></app-tree>
+    </div>
+}
+
+@if(binaryTree.root) {
+    <div class="w-100">
+        <pre>{{binaryTree | json}}</pre>
+    </div>
+}

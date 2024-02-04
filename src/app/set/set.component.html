@@ -1,0 +1,56 @@
+<div class="m-2 text-xl font-medium text-teal-600">Sets</div>
+
+<input [(ngModel)]="name" class="m-2 outline-none p-1 rounded"/>
+<button class="bg-teal-600 text-slate-50 m-2 p-2 rounded" (click)="createSet(name)">Create Set</button>
+<button class="bg-teal-600 text-slate-50 m-2 p-2 rounded" (click)="deleteSet(name)">Delete Set</button>
+
+<div class="flex flex-row">
+    @for (name of collectionNames; track $index) {
+        <button class="text-slate-50 m-2 p-2 rounded" [ngClass]="name === selectedSetName ? 'bg-teal-600' : 'bg-teal-200'" (click)="selectSet(name)">{{name}}</button>
+    }
+</div>
+
+
+<div class="text-sky-600 m-2" [innerText]="result"></div>
+
+@if (selectedSet) {
+    <input [(ngModel)]="item" class="m-2 outline-none p-1 rounded"/>
+    <button class="bg-teal-600 text-slate-50 m-2 p-2 rounded" (click)="add()">Add item</button>
+    <button class="bg-teal-600 text-slate-50 m-2 p-2 rounded" (click)="delete()">Delete item</button>
+    <div class="flex flex-col">
+        @for (item of selectedSet; track $index) {
+            <span class="text-teal-600 m-2" [innerText]="item"></span>
+        }
+    </div>
+}
+
+<div class="border-b-2 mx-2 my-6 border-teal-40"></div>
+
+<div class="grid grid-cols-4 gap-4">
+        <div>            
+            <div class="text-teal-600 m-2">Union of All Sets</div>
+            <div class="flex flex-col">
+                @for (item of union; track $index) {
+                    <span class="text-teal-600 m-2" [innerText]="item"></span>
+                }
+            </div>
+        </div>
+    
+        <div>
+            <div class="text-teal-600 m-2">Intersection of All Sets</div>
+            <div class="flex flex-col">
+                @for (item of intersection; track $index) {
+                    <span class="text-teal-600 m-2" [innerText]="item"></span>
+                }
+            </div>
+        </div>
+
+        <div>
+            <div class="text-teal-600 m-2">Differences of All Sets</div>
+            <div class="flex flex-col">
+                @for (item of difference; track $index) {
+                    <span class="text-teal-600 m-2" [innerText]="item"></span>
+                }
+            </div>
+        </div>
+</div>

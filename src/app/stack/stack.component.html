@@ -1,0 +1,15 @@
+<div class="m-2 text-xl font-medium text-teal-600">Stack</div>
+
+<p class="text-teal-600 m-2 p-2">FILO</p>
+<p class="text-teal-600 m-2 p-2">push, pop, peek, length</p>
+
+<input [(ngModel)]="item" class="m-2 outline-none p-1 rounded"/>
+
+<button class="bg-teal-600 text-slate-50 m-2 p-2 rounded" (click)="push()">Push</button>
+<div>
+    <button class="bg-teal-600 text-slate-50 m-2 p-2 rounded" (click)="pop()">Pop</button>
+    <button class="bg-teal-600 text-slate-50 m-2 p-2 rounded" (click)="peek()">Peek</button>
+    <button class="bg-teal-600 text-slate-50 m-2 p-2 rounded" (click)="size()">Check Size</button>
+</div>
+
+<div class="text-sky-600 m-2" [innerText]="result"></div>
