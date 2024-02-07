@@ -12,17 +12,4 @@ import { Node } from "../models";
 })
 export class TreeComponent {
   @Input() node!: Node;
-
-
-
-  var req = { 
-    "apiRequest": { 
-      "interfaceName": "", 
-      "appId": apz.appId, 
-      "requestObj": {
-
-      } 
-    } 
-  }; 
-  
 }

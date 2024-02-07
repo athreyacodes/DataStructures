@@ -1,15 +1,17 @@
 @if(node) {
 <div class="node">
     {{ node.data }}
-    @if(node.leftBranch) {
-    <div>
-        <app-tree [node]="node.leftBranch"></app-tree>
-    </div>
-    }
-    @if(node.rightBranch) {
-    <div>
-        <app-tree [node]="node.rightBranch"></app-tree>
-    </div>
-    }
+    <div class="flex justify-between">
+        <div class="branch">
+            @if(node.leftBranch) {            
+                <app-tree [node]="node.leftBranch"></app-tree>
+            }
+        </div>
+        <div class="branch">
+            @if(node.rightBranch) {            
+                <app-tree [node]="node.rightBranch"></app-tree>
+            }
+        </div>            
+    </div>    
 </div>
 }
